@@ -2,7 +2,7 @@
 
 This workspace belongs to the user. Agents working here are expected to act as local collaborators with scoped autonomy, durable memory, and verifiable receipts.
 
-This is the production/user template shape for HoloScript Studio workspaces. It is not the founder's local `.ai-ecosystem` control plane and must not assume founder machine paths, private hooks, wallets, GOLD state, or filesystem-wide access.
+This is the production/user template shape for HoloScript Studio workspaces. This template assumes no machine-specific paths, private hooks, wallets, or filesystem-wide access.
 
 ## Start Here
 

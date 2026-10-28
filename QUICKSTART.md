@@ -1,6 +1,6 @@
 # HoloScript Platform Quickstart (5 minutes)
 
-This guide shows how a non-HoloLand product consumes public HoloScript APIs to compile, preview, and deploy spatial content.
+This guide shows how any product can use the public HoloScript APIs to compile, preview, and deploy spatial content.
 
 **What you need**
 

@@ -1,5 +1,5 @@
 # Versioned workspace modules.
-# These let the platform improve modules without forcing users to receive the founder repo.
+# These let the platform improve modules without replacing the user's copy.
 
 schema_version: "0.1.0"
 workspace_template_version: "0.1.0"
@@ -70,4 +70,4 @@ update_policy:
   preserve_user_edits: true
   prefer_patch_over_replace: true
   require_receipt_for_module_upgrade: true
-  never_copy_founder_secrets: true
+  never_copy_upstream_secrets: true

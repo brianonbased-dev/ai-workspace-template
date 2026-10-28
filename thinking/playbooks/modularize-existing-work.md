@@ -1,10 +1,10 @@
 # Playbook: Modularize Existing Work
 
-Use this when the workspace contains archived or founder-derived material that should become a reusable module.
+Use this when the workspace contains archived or imported material that should become a reusable module.
 
 1. Classify the source as doctrine, skill, capability, policy, service, agent, check, or experiment.
 2. Identify the user-safe subset.
-3. Remove founder-only paths, secrets, internal boards, and private service assumptions.
+3. Remove machine-specific paths, secrets, and private service assumptions.
 4. Assign a module name and version in `ecosystem/modules.yml`.
 5. Add the module file or folder.
 6. Add verification or receipt expectations.
