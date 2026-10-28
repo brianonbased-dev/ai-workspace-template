@@ -1,0 +1,35 @@
+# Workspace Configuration
+# Operational settings for MCP endpoints, knowledge sync, and agent tooling.
+
+orchestrator:
+  url: "https://your-orchestrator.example.com"
+  # API key stored as GitHub repo secret: HOLOSCRIPT_API_KEY
+  # Never put keys in this file.
+
+mcp_servers:
+  holoscript:
+    url: "https://mcp.holoscript.net"
+    description: "Universal semantic platform — parsing, compiling, graph analysis (tool count is live; verify via mcp.holoscript.net/health or HoloScript/docs/NUMBERS.md)"
+  absorb:
+    url: "https://absorb.holoscript.net"
+    description: "Codebase intelligence — scan repos, extract knowledge, semantic search"
+
+knowledge:
+  sync_on_push: true
+  batch_size: 20
+  valid_types:
+    - wisdom
+    - pattern
+    - gotcha
+
+modules:
+  registry: "ecosystem/modules.yml"
+  preserve_user_edits: true
+  require_upgrade_receipts: true
+
+agent_genesis:
+  policy: "ecosystem/agent-genesis.yml"
+  roster: "agents/roster.yml"
+  autospawn: "fleet/autospawn.yml"
+  skills_lobby: "ecosystem/skills/lobby.yml"
+  thinking: "THINKING.md"

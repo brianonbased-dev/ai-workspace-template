@@ -1,0 +1,56 @@
+# User workspace skill lobby.
+
+schema_version: "0.1.0"
+purpose: "Make the first agent move obvious before raw commands."
+
+task_pressure:
+  docs_or_doctrine:
+    first_skill: "documenter"
+    pair_with:
+      - "critic"
+    canonical_paths:
+      - "SKILLS.md"
+      - "ecosystem/skills/README.md"
+    raw_fallback: "direct markdown edit after checking the canonical module"
+    failure_avoided: "repeated doctrine and stale instructions"
+
+  codebase_question:
+    first_skill: "codebase"
+    pair_with:
+      - "absorb_graph_rag"
+    canonical_paths:
+      - "CAPABILITIES.md"
+      - "thinking/questions/absorb-graph-rag.md"
+    raw_fallback: "repo search after graph or symbol query"
+    failure_avoided: "shallow grep and missed dependencies"
+
+  service_health:
+    first_skill: "holoheal"
+    pair_with:
+      - "holoclaw"
+    canonical_paths:
+      - "holoheal/checks.yml"
+    raw_fallback: "health endpoint or command listed in the check"
+    failure_avoided: "silent service bypasses and unverified repairs"
+
+  secret_or_token:
+    first_skill: "holodoor"
+    pair_with:
+      - "secret_broker"
+      - "holoheal"
+    canonical_paths:
+      - "SECRETS.md"
+      - "ecosystem/agent-genesis.yml"
+      - "ecosystem/holodoor/policy.json"
+    raw_fallback: "none; secrets require brokered handles"
+    failure_avoided: "plaintext secret exposure"
+
+  multi_agent_goal:
+    first_skill: "fleet"
+    pair_with:
+      - "holodaemon"
+    canonical_paths:
+      - "agents/roster.yml"
+      - "fleet/autospawn.yml"
+    raw_fallback: "single-agent execution only when the goal is explicitly narrow"
+    failure_avoided: "unowned work and lost handoffs"

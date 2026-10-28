@@ -1,0 +1,29 @@
+# Claude Code agent configuration
+# Your agent reads this to configure its behavior in this workspace.
+
+model: "claude-opus-4-7"
+
+context_protocol:
+  hot: "always"            # Core identity + safety rules — always loaded
+  warm: "on-task"          # Domain-specific knowledge — loaded per task
+  cold: "mcp-query"        # On-demand from knowledge store via MCP
+
+knowledge:
+  re_intake: true          # Query knowledge store before starting work
+  compress: true           # Extract W/P/G after completing work
+  auto_sync: true          # Commit new entries on session end
+
+mcp_servers:
+  - "holoscript"
+  - "absorb"
+
+tools:
+  preferred:
+    - "absorb_extract_knowledge"
+    - "absorb_query"
+    - "absorb_run_absorb"
+    - "holo_graph_status"
+    - "holo_query_codebase"
+    - "holo_impact_analysis"
+    - "suggest_traits"
+    - "validate_holoscript"

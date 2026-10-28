@@ -1,0 +1,30 @@
+# Workspace-local Agent Genesis policy.
+
+schema_version: "0.1.0"
+
+principles:
+  - "Persist agent policy in the workspace, not only in UI state."
+  - "Autospawn from user intent when policy allows."
+  - "Route through skills before raw tools."
+  - "Gate sensitive tool use, MCP config, and secret grants through HoloDoor."
+  - "Use brokered secret handles only."
+  - "Emit receipts for HoloDoor, HoloHeal, HoloClaw, HoloMesh, and Fleet events."
+
+secret_policy:
+  raw_secret_access: false
+  policy_gate: "HoloDoor"
+  grant_shape: "secret://workspace/{workspace_id}/{service}/{name}"
+  required_receipt_field: "plaintextReturned=false"
+
+receipt_events:
+  - "policy.checked"
+  - "policy.warned"
+  - "policy.blocked"
+  - "agent.autospawned"
+  - "skill.selected"
+  - "secret.granted"
+  - "health.failed"
+  - "repair.started"
+  - "repair.verified"
+  - "knowledge.compressed"
+  - "module.upgraded"

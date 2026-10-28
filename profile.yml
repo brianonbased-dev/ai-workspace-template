@@ -1,0 +1,16 @@
+# AI Workspace Profile
+# This file is your identity across the AI ecosystem.
+# Agents read this to personalize behavior. The orchestrator reads it for workspace scoping.
+
+username: ""                      # GitHub username (set on signup)
+display_name: ""                  # Human-readable name
+tier: "free"                      # free | pro | enterprise
+workspace_id: ""                  # "ws-{github_username}" — set on creation, used in all knowledge syncs
+
+preferences:
+  default_agent: "claude"         # claude | gemini | custom
+  knowledge_auto_sync: true       # Sync knowledge to orchestrator on every push to main
+  compress_on_session_end: true   # Auto-extract W/P/G from session before closing
+  max_entries_per_sync: 50        # Batch size ceiling for sync action
+
+created_at: ""                    # ISO 8601 timestamp, set on creation

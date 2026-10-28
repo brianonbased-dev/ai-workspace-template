@@ -1,0 +1,30 @@
+# MCP Server Registry
+# Agents read this to discover available tool servers.
+
+servers:
+  holoscript:
+    url: "https://mcp.holoscript.net"
+    transport: "sse"
+    tools: 122
+    auth: "none for reads, Bearer for writes"
+    description: "Universal semantic platform — parse, compile, render .hs/.holo across 17 targets"
+
+  absorb:
+    url: "https://absorb.holoscript.net"
+    transport: "sse"
+    auth: "Bearer ABSORB_API_KEY"
+    description: "Codebase intelligence — scan repos into knowledge graphs, semantic search, W/P/G extraction"
+    key_tools:
+      - absorb_run_absorb
+      - absorb_extract_knowledge
+      - absorb_query
+
+  orchestrator:
+    url: "https://your-orchestrator.example.com"
+    transport: "http"
+    auth: "x-mcp-api-key header"
+    description: "Knowledge federation — semantic search across all workspaces, agent registry"
+    key_endpoints:
+      - "POST /knowledge/query"
+      - "POST /knowledge/sync"
+      - "GET /health"

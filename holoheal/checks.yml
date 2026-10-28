@@ -1,0 +1,25 @@
+# HoloHeal checks for the workspace.
+
+schema_version: "0.1.0"
+
+checks:
+  skills_first:
+    description: "Agent consulted skills before raw tool work."
+    evidence: "skill.selected receipt or session note"
+  secrets_brokered:
+    description: "Secret access used handles and receipts."
+    evidence: "secret grant receipt with plaintextReturned=false"
+  holodoor_policy:
+    description: "Sensitive tool use and secret grants passed through HoloDoor policy."
+    evidence: "policy.checked receipt or HoloDoor telemetry event"
+  capabilities_visible:
+    description: "Capability inventory exists before duplicate work."
+    evidence: "CAPABILITIES.md or generated scan"
+  knowledge_compressed:
+    description: "Reusable learning became W/P/G."
+    evidence: "knowledge entry path or sync receipt"
+  local_verification:
+    description: "Changes were verified by a local or hosted proof."
+    evidence: "command output, health response, screenshot, or test result"
+
+receipt_path: "holoheal/receipts/"

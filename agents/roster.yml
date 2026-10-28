@@ -1,0 +1,52 @@
+# Default agent roster for a user workspace.
+
+schema_version: "0.1.0"
+
+agents:
+  holodaemon:
+    autospawn: true
+    role: "resident workspace steward"
+    owns:
+      - "workspace goals"
+      - "long-running improvements"
+      - "module upgrade suggestions"
+  holodoor:
+    autospawn: true
+    role: "policy gate and telemetry guardrail"
+    owns:
+      - "tool-use policy"
+      - "MCP config validation"
+      - "secret grant gate receipts"
+  holoheal:
+    autospawn: true
+    role: "health and receipt monitor"
+    owns:
+      - "build checks"
+      - "service health"
+      - "secret access receipts"
+  holoclaw:
+    autospawn: "on_failure"
+    role: "repair agent"
+    owns:
+      - "type/build failures"
+      - "route failures"
+      - "broken integrations"
+  holomesh_oracle:
+    autospawn: "on_research_or_unknown"
+    role: "knowledge connector"
+    owns:
+      - "cross-domain synthesis"
+      - "W/P/G extraction"
+      - "Graph RAG questions"
+  fleet:
+    autospawn: "on_multi_agent_goal"
+    role: "coordination layer"
+    owns:
+      - "agent assignment"
+      - "handoffs"
+      - "parallel work receipts"
+
+ide_overlays:
+  claude: "agents/claude.yml"
+  gemini: "agents/gemini.yml"
+  custom: "agents/profiles/"

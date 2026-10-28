@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "1.0.0",
+  "mcpServers": {
+    "allowlist": [],
+    "blocklist": [],
+    "matchBy": "id"
+  },
+  "tools": {
+    "allowlist": [],
+    "blocklist": [],
+    "blockedCommandPatterns": []
+  },
+  "secretGrants": {
+    "allowedSecretRefPrefixes": [
+      "secret://workspace/"
+    ],
+    "blockedSecretRefPrefixes": [],
+    "allowedCapabilityRefs": [
+      "cap://daemon/secrets/broker-only",
+      "cap://daemon/secrets/rotate",
+      "cap://daemon/secrets/receipt"
+    ],
+    "blockedCapabilityRefs": [],
+    "allowedAgentIds": [],
+    "blockedAgentIds": [],
+    "maxTtlSeconds": 900,
+    "requirePurpose": true
+  },
+  "guardrails": [
+    "Gate tool use, MCP configuration, and secret grants through HoloDoor policy before execution.",
+    "Keep telemetry redacted; HoloMesh stores policy decisions and receipt references, not secret values."
+  ],
+  "repoRules": {
+    "pathGlobs": [
+      "**/*"
+    ]
+  },
+  "telemetry": {
+    "mode": "local",
+    "redact": "strict"
+  },
+  "enforcement": {
+    "onViolation": "warn",
+    "postSessionAlertOnBlock": false
+  }
+}

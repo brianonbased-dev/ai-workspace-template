@@ -1,0 +1,38 @@
+# Fleet autospawn policy.
+
+schema_version: "0.1.0"
+policy_gate: "HoloDoor"
+
+intents:
+  "fix failing build":
+    spawn:
+      - holoheal
+      - holoclaw
+  "understand repo":
+    spawn:
+      - holomesh_oracle
+    tools:
+      - absorb
+      - graph_rag
+  "new project":
+    spawn:
+      - holodaemon
+      - fleet
+  "secret or token":
+    spawn:
+      - holodoor
+      - holoheal
+    tools:
+      - secret_broker
+    receipt_order:
+      - "holodoor.policy.checked"
+      - "secret.granted"
+  "multi-agent work":
+    spawn:
+      - fleet
+      - holodaemon
+
+limits:
+  max_parallel_agents_default: 3
+  require_user_approval_above: 5
+  require_receipts: true

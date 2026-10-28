@@ -1,0 +1,23 @@
+# Local hardware and runtime capability snapshot.
+# Agents may update this with evidence from the user's machine.
+
+schema_version: "0.1.0"
+last_verified: ""
+
+machine:
+  os: ""
+  cpu: ""
+  gpu: ""
+  memory_gb: ""
+
+runtimes:
+  node: ""
+  package_manager: ""
+  browser: ""
+  webgpu: "unknown"
+  wasm_simd: "unknown"
+  python: ""
+
+evidence:
+  commands: []
+  receipts: []

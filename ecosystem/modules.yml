@@ -1,0 +1,73 @@
+# Versioned workspace modules.
+# These let the platform improve modules without forcing users to receive the founder repo.
+
+schema_version: "0.1.0"
+workspace_template_version: "0.1.0"
+
+modules:
+  north_star:
+    version: "0.1.0"
+    path: "NORTH_STAR.md"
+    source_family: "ai-ecosystem"
+    purpose: "Workspace vision, decision order, escalation rules"
+  agent_contract:
+    version: "0.1.0"
+    path: "AGENTS.md"
+    source_family: "ai-ecosystem"
+    purpose: "IDE and service agent behavior contract"
+  thinking:
+    version: "0.1.0"
+    path: "THINKING.md"
+    source_family: "ai-ecosystem"
+    purpose: "Visible reasoning protocol and skill-first loop"
+  skills:
+    version: "0.2.0"
+    path: "SKILLS.md"
+    source_family: "ai-ecosystem"
+    purpose: "First routing layer for agents; includes ecosystem/skills/lobby.yml"
+  capabilities:
+    version: "0.1.0"
+    path: "CAPABILITIES.md"
+    source_family: "ai-ecosystem"
+    purpose: "Generated inventory of available tools and services"
+  secrets:
+    version: "0.1.0"
+    path: "SECRETS.md"
+    source_family: "ai-ecosystem"
+    purpose: "Brokered secret handles and receipt policy"
+  services:
+    version: "0.1.0"
+    path: "SERVICES.md"
+    source_family: "ai-ecosystem"
+    purpose: "Hosted and local service bindings"
+  agents:
+    version: "0.1.0"
+    path: "agents/"
+    source_family: "ai-ecosystem"
+    purpose: "Roster, policies, and IDE overlays"
+  holoheal:
+    version: "0.1.0"
+    path: "holoheal/"
+    source_family: "ai-ecosystem"
+    purpose: "Self-healing checks and evidence receipts"
+  holodoor:
+    version: "0.1.0"
+    path: "ecosystem/holodoor/"
+    source_family: "ai-ecosystem"
+    purpose: "Policy gate for tool use, MCP config, and secret grants"
+  fleet:
+    version: "0.1.0"
+    path: "fleet/"
+    source_family: "ai-ecosystem"
+    purpose: "Autospawn and coordination policy"
+  lab:
+    version: "0.1.0"
+    path: "lab/"
+    source_family: "ai-ecosystem"
+    purpose: "Hardware-native experimentation surface"
+
+update_policy:
+  preserve_user_edits: true
+  prefer_patch_over_replace: true
+  require_receipt_for_module_upgrade: true
+  never_copy_founder_secrets: true

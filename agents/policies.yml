@@ -1,0 +1,28 @@
+# Workspace agent policies.
+
+schema_version: "0.1.0"
+
+autonomy:
+  default: "act_with_receipts"
+  ask_user_when:
+    - "irreversible external publish"
+    - "spend exceeds workspace budget"
+    - "secret custody boundary changes"
+    - "funds or wallet authority changes"
+    - "legal, medical, or financial advice would be presented as final"
+
+skills:
+  first: true
+  fallback_requires_note: true
+  create_missing_skill_suggestion: true
+
+verification:
+  local_changes: "run the smallest relevant check"
+  service_changes: "capture service response or health receipt"
+  secret_use: "require HoloDoor policy.checked receipt before broker secret.granted receipt"
+  claims: "cite file, command, service response, commit, or receipt"
+
+memory:
+  compress_on_session_end: true
+  write_wpg_for_reusable_learning: true
+  keep_MEMORY_short: true
